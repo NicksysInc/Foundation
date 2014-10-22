@@ -1,0 +1,20 @@
+extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+// ----------------------------------------------------------------------------
+// <copyright file="%FileName%" company="Nicksys">
+// Copyright (c) Nicksys Inc. All Rights Reserved.
+// http://www.nicksysfoundation.com/
+// </copyright>
+// <summary></summary>
+// ----------------------------------------------------------------------------
+
+extensions: .aspx .ascx
+<%-- 
+Sample license text.
+--%>
+extensions: .vb
+'Sample license text.
+extensions:  .xml .config .xsd
+<!--
+Sample license text.
+-->

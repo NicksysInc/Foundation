@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56055FB0-5659-4439-A3DF-8917840D74B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nicksys.Foundation</RootNamespace>
+    <AssemblyName>Nicksys.Foundation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Builds\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Builds\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Caching\CacheManagerFactory.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\ICacheManagerFactory.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Caching\WebCacheManager.cs" />
+    <Compile Include="Commands\CommandDispatcherFactory.cs" />
+    <Compile Include="Commands\CommandHandlerNotFoundException.cs" />
+    <Compile Include="Commands\CommandResult.cs" />
+    <Compile Include="Commands\CommandResultList.cs" />
+    <Compile Include="Commands\CommandValidationResult.cs" />
+    <Compile Include="Commands\DefaultCommandDispatcher.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandDispatcher.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="Commands\ICommandResult.cs" />
+    <Compile Include="Commands\ICommandResultList.cs" />
+    <Compile Include="Commands\ICommandValidationResult.cs" />
+    <Compile Include="Commands\ICommandValidator.cs" />
+    <Compile Include="Commands\ValidationHandlerNotFoundException.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Data\DataContextBase.cs" />
+    <Compile Include="Data\DataContextFactory.cs" />
+    <Compile Include="Data\DataEntity.cs" />
+    <Compile Include="Data\DataEntityIsNullException.cs" />
+    <Compile Include="Domain\DomainObjectIsNullException.cs" />
+    <Compile Include="Data\EntityFrameworkDataContext.cs" />
+    <Compile Include="Data\FoundationDataException.cs" />
+    <Compile Include="Domain\FoundationDomainException.cs" />
+    <Compile Include="Data\IDataContext.cs" />
+    <Compile Include="Data\IDataEntity.cs" />
+    <Compile Include="Domain\IRepository.cs" />
+    <Compile Include="Domain\RepositoryBase.cs" />
+    <Compile Include="DefaultResolver.cs" />
+    <Compile Include="DependencyManager.cs" />
+    <Compile Include="Domain\DomainObject.cs" />
+    <Compile Include="Domain\IDomainObject.cs" />
+    <Compile Include="FoundationException.cs" />
+    <Compile Include="IResolver.cs" />
+    <Compile Include="Logging\ILoggerConfigurationFactory.cs" />
+    <Compile Include="Logging\ILoggingProvider.cs" />
+    <Compile Include="Logging\ILoggingProviderFactory.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LoggerConfiguration.cs" />
+    <Compile Include="Logging\LoggerConfigurationFactory.cs" />
+    <Compile Include="Logging\LoggerFactory.cs" />
+    <Compile Include="Logging\LoggingLevel.cs" />
+    <Compile Include="Logging\LoggingProviderFactory.cs" />
+    <Compile Include="Logging\MessageFormatter.cs" />
+    <Compile Include="Notification\INotificationManager.cs" />
+    <Compile Include="Notification\NotificationManager.cs" />
+    <Compile Include="Notification\SmtpNotificationMessage.cs" />
+    <Compile Include="Notification\IMessageDelivery.cs" />
+    <Compile Include="Notification\INotificationMessage.cs" />
+    <Compile Include="Notification\NotificationMessageBase.cs" />
+    <Compile Include="Notification\NotificationResult.cs" />
+    <Compile Include="Notification\SmtpMessageDelivery.cs" />
+    <Compile Include="ObjectMapping\IObjectMapper.cs" />
+    <Compile Include="ObjectMapping\ObjectMapper.cs" />
+    <Compile Include="ObjectMapping\MemberMatch.cs" />
+    <Compile Include="ObjectMapping\ObjectMapperAlreadyRegisteredException.cs" />
+    <Compile Include="ObjectMapping\ObjectMapperNotRegisteredException.cs" />
+    <Compile Include="ObjectMapping\SingleObjectMappingContainer.cs" />
+    <Compile Include="ObjectMapping\TypeMatch.cs" />
+    <Compile Include="ObjectMapping\ObjectMapperFactory.cs" />
+    <Compile Include="ObjectMapping\PropertyMatch.cs" />
+    <Compile Include="ObjectMapping\ObjectMappingContainer.cs" />
+    <Compile Include="ObjectMapping\ReflectionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Querying\CriteriaOperator.cs" />
+    <Compile Include="Querying\Criterion.cs" />
+    <Compile Include="Querying\IQueryContext.cs" />
+    <Compile Include="Querying\LinqQueryTranslator.cs" />
+    <Compile Include="Querying\OrderClause.cs" />
+    <Compile Include="Querying\OrderOperator.cs" />
+    <Compile Include="Querying\Query.cs" />
+    <Compile Include="Querying\QueryContext.cs" />
+    <Compile Include="Querying\QueryOperator.cs" />
+    <Compile Include="Querying\QueryParameter.cs" />
+    <Compile Include="Querying\QueryString.cs" />
+    <Compile Include="Querying\QueryTranslator.cs" />
+    <Compile Include="Querying\SqlQueryParameter.cs" />
+    <Compile Include="Querying\SqlQueryTranslator.cs" />
+    <Compile Include="ResolverExtensions.cs" />
+    <Compile Include="Services\ActionContext.cs" />
+    <Compile Include="Services\ActionContextFactory.cs" />
+    <Compile Include="Services\ActionResult.cs" />
+    <Compile Include="Services\ActionResultList.cs" />
+    <Compile Include="Services\IActionContext.cs" />
+    <Compile Include="Services\IActionResult.cs" />
+    <Compile Include="Services\IScheduledAction.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IServiceResult.cs" />
+    <Compile Include="Services\ScheduledAction.cs" />
+    <Compile Include="Services\ScheduledActionList.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\ServiceResult.cs" />
+    <Compile Include="Utils\DataHelper.cs" />
+    <Compile Include="Utils\ListExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Nicksys.Foundation.licenseheader" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

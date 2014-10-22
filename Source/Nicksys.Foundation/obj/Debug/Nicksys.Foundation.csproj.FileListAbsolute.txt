@@ -1,0 +1,4 @@
+E:\NicksysTFS\Foundation\Builds\Nicksys.Foundation.dll
+E:\NicksysTFS\Foundation\Builds\Nicksys.Foundation.pdb
+E:\NicksysTFS\Foundation\Main\Source\FoundationSolution\Nicksys.Foundation\obj\Debug\Nicksys.Foundation.dll
+E:\NicksysTFS\Foundation\Main\Source\FoundationSolution\Nicksys.Foundation\obj\Debug\Nicksys.Foundation.pdb

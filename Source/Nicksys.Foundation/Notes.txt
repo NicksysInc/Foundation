@@ -1,0 +1,2 @@
+﻿The DependencyManager should be initialized using the following code
+The DependencyManager.SetResolver(resolver);
